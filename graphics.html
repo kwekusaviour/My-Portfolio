@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphics Portfolio | Nebula Creative Studio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      /* Modal Styles */
+      #flyerModal.hidden {
+        display: none;
+      }
+      #flyerModal.flex {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class="bg-[#050505] text-white font-sans">
+    <div
+      id="flyerModal"
+      class="hidden fixed inset-0 z-[100] bg-black/95 flex-col items-center justify-center p-4"
+      onclick="closeModal()"
+    >
+      <button class="absolute top-10 right-10 text-white text-4xl">
+        &times;
+      </button>
+      <img
+        id="modalImg"
+        src=""
+        class="max-h-[85vh] max-w-full rounded-lg shadow-2xl border border-zinc-800"
+      />
+      <p
+        id="modalCaption"
+        class="mt-6 text-purple-400 font-bold tracking-widest uppercase text-sm"
+      ></p>
+    </div>
+
+    <nav
+      class="sticky top-0 z-50 bg-[#050505]/90 backdrop-blur-md p-6 flex justify-between items-center border-b border-zinc-800"
+    >
+      <a
+        href="home.html"
+        class="flex items-center gap-2 text-zinc-400 hover:text-cyan-400 transition font-medium uppercase tracking-widest text-xs"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-4 w-4"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M10 19l-7-7m0 0l7-7m-7 7h18"
+          />
+        </svg>
+        Back to Home
+      </a>
+      <h2 class="text-xs font-bold tracking-[0.3em] uppercase text-cyan-400">
+        Graphics
+      </h2>
+    </nav>
+
+    <header class="pt-32 pb-20 text-center">
+      <h2
+        class="text-xs font-bold tracking-[0.5em] text-zinc-500 uppercase mb-4"
+      >
+        Visual Identity
+      </h2>
+      <h1 class="text-7xl font-black mb-4 tracking-tighter uppercase">
+        Design <span class="text-purple-500">Systems.</span>
+      </h1>
+      <p class="text-zinc-500 text-xl tracking-widest uppercase">
+        Logos — Flyers — Brand Identity
+      </p>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-6 pb-32">
+      <div class="flex items-center gap-4 mb-12">
+        <h3 class="text-xs font-bold tracking-[0.3em] text-zinc-500 uppercase">
+          01. Logos
+        </h3>
+        <div class="h-[1px] flex-1 bg-zinc-900"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-32">
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/logo.png"
+            alt="Logo 1"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/Dialectalogo.jpg"
+            alt="Logo 2"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/Mayworks-Logo.png"
+            alt="Logo 3"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/breezelogo.png"
+            alt="Logo 4"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/sternlogo.png"
+            alt="Logo 5"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+
+        <div
+          class="group relative bg-zinc-900 border border-zinc-800 rounded-3xl p-12 flex items-center justify-center overflow-hidden"
+        >
+          <img
+            src="./assets/SELINElogo.png"
+            alt="Logo 5"
+            class="relative z-10 w-4/5 object-contain"
+          />
+        </div>
+      </div>
+
+      <div class="flex items-center gap-4 mb-12">
+        <h3 class="text-xs font-bold tracking-[0.3em] text-zinc-500 uppercase">
+          02. Marketing Media
+        </h3>
+        <div class="h-[1px] flex-1 bg-zinc-900"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          onclick="openModal('./assets/flyer4.jpg', 'Project One')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-purple-500 transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/flyer4.jpg"
+              alt="Flyer 1"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project One
+            </h4>
+          </div>
+        </div>
+
+        <div
+          onclick="openModal('./assets/flyer5.jpg', 'Project Two')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-cyan-400 transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/flyer5.jpg"
+              alt="Flyer 2"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project Two
+            </h4>
+          </div>
+        </div>
+
+        <div
+          onclick="openModal('./assets/flyer6.jpg', 'Project Three')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-purple-500 transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/flyer6.jpg"
+              alt="Flyer 3"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project Three
+            </h4>
+          </div>
+        </div>
+
+        <div
+          onclick="openModal('./assets/annieflyer.jpg', 'Project Four')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-cyan-400 transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/annieflyer.jpg"
+              alt="Flyer 4"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project Four
+            </h4>
+          </div>
+        </div>
+
+        <div
+          onclick="openModal('./assets/tastefoodlogo.jpg', 'Project Five')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-white transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/tastefoodlogo.jpg"
+              alt="Flyer 5"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project Five
+            </h4>
+          </div>
+        </div>
+
+        <div
+          onclick="openModal('./assets/TECHHUBflyer.png', 'Project Six')"
+          class="group cursor-pointer overflow-hidden rounded-3xl bg-zinc-900 border border-zinc-800 hover:border-white transition-all duration-500"
+        >
+          <div class="aspect-[4/5] bg-zinc-800 overflow-hidden">
+            <img
+              src="./assets/TECHHUBflyer.png"
+              alt="Flyer 6"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-700"
+            />
+          </div>
+          <div class="p-6 border-t border-zinc-800 text-center">
+            <h4 class="font-bold uppercase tracking-tighter">
+              Play Project Six
+            </h4>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-12 text-center border-t border-zinc-900">
+      <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase">
+        &copy; 2026 NEBULA CREATIVE STUDIO — ALL RIGHTS RESERVED
+      </p>
+    </footer>
+
+    <script>
+      function openModal(src, title) {
+        document.getElementById("modalImg").src = src;
+        document.getElementById("modalCaption").innerText = title;
+        document.getElementById("flyerModal").classList.remove("hidden");
+        document.getElementById("flyerModal").classList.add("flex");
+        document.body.style.overflow = "hidden"; // Stop scrolling
+      }
+
+      function closeModal() {
+        document.getElementById("flyerModal").classList.add("hidden");
+        document.getElementById("flyerModal").classList.remove("flex");
+        document.body.style.overflow = "auto"; // Enable scrolling
+      }
+    </script>
+  </body>
+</html>
