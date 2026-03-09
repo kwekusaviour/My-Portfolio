@@ -54,31 +54,37 @@
       </h2>
     </nav>
 
-    <!-- MAIN -->
-
     <main class="max-w-5xl mx-auto px-6 py-20">
-      <!-- NAME + TITLE -->
+      <section
+        class="mb-16 flex flex-col md:flex-row md:items-center md:justify-between gap-10"
+      >
+        <div class="max-w-3xl">
+          <h1 class="text-6xl font-black tracking-tighter uppercase mb-4">
+            Saviour <span class="text-cyan-400">Dogbey</span>
+          </h1>
 
-      <section class="mb-16">
-        <h1 class="text-6xl font-black tracking-tighter uppercase mb-4">
-          Saviour <span class="text-cyan-400">Dogbey</span>
-        </h1>
+          <p class="text-zinc-500 uppercase tracking-widest mb-6">
+            Full-Stack Developer • UI/UX Designer • Graphic Designer
+          </p>
 
-        <p class="text-zinc-500 uppercase tracking-widest mb-6">
-          Full-Stack Developer • UI/UX Designer • Graphic Designer
-        </p>
+          <p class="text-zinc-400 text-lg">
+            Multi-disciplinary Full-Stack Software Developer and Designer
+            experienced in building scalable web applications, UI/UX systems,
+            and visual brand identities. Skilled in crafting modern digital
+            products with Next.js, React, Tailwind CSS, and JavaScript while
+            combining strong engineering principles with thoughtful design and
+            user experience.
+          </p>
+        </div>
 
-        <p class="text-zinc-400 max-w-3xl text-lg">
-          Multi-disciplinary Full-Stack Software Developer and Designer
-          experienced in building scalable web applications, UI/UX systems, and
-          visual brand identities. Skilled in crafting modern digital products
-          with Next.js, React, Tailwind CSS, and JavaScript while combining
-          strong engineering principles with thoughtful design and user
-          experience.
-        </p>
+        <div class="flex-shrink-0">
+          <img
+            src="./assets/profilepic.jpeg"
+            alt="Saviour Dogbey"
+            class="w-60 h-60 rounded-full object-fit border border-zinc-800 shadow-lg"
+          />
+        </div>
       </section>
-
-      <!-- SKILLS -->
 
       <section class="mb-16">
         <h3
@@ -126,8 +132,6 @@
         </div>
       </section>
 
-      <!-- EDUCATION -->
-
       <section class="mb-16">
         <h3
           class="text-xs font-bold tracking-[0.3em] text-zinc-500 uppercase mb-8"
@@ -149,8 +153,6 @@
         </div>
       </section>
 
-      <!-- CONTACT -->
-
       <section>
         <h3
           class="text-xs font-bold tracking-[0.3em] text-zinc-500 uppercase mb-8"
@@ -159,8 +161,6 @@
         </h3>
 
         <div class="space-y-4 text-zinc-400">
-          <!-- EMAIL -->
-
           <a
             href="mailto:saviour.k.dogbey92@gmail.com"
             class="flex items-center gap-3 hover:text-cyan-400 transition"
@@ -168,8 +168,6 @@
             Email:
             <span>saviour.k.dogbey92@gmail.com</span>
           </a>
-
-          <!-- GITHUB -->
 
           <a
             href="https://github.com/kwekusaviour"
@@ -196,8 +194,6 @@
             <span>github.com/kwekusaviour</span>
           </a>
 
-          <!-- LINKEDIN -->
-
           <a
             href="https://www.linkedin.com/in/saviour-dogbey-31685a348"
             target="_blank"
@@ -217,6 +213,75 @@
             <span>linkedin.com/in/saviour-dogbey-31685a348</span>
           </a>
         </div>
+        <div
+          class="relative inline-block pt-10 flex item-center justify-center"
+        >
+          <button id="openModal" class="relative group">
+            <img
+              src="./assets/portfolio-cv.png"
+              alt="Saviour Dogbey"
+              class="w-60 h-60 rounded-3xl object-cover border border-zinc-800 shadow-lg hover:scale-105 transition-transform"
+            />
+            <span
+              class="absolute inset-0 flex items-center justify-center text-white text-lg font-bold opacity-0 group-hover:opacity-100 transition-opacity bg-black/30 rounded-3xl hover:text-cyan-400 transition"
+            >
+              View Me
+            </span>
+          </button>
+        </div>
+
+        <div
+          id="modal"
+          class="fixed inset-0 hidden items-center justify-center z-50 bg-black/40 backdrop-blur-sm p-4 overflow-auto"
+        >
+          <div
+            class="bg-white/10 backdrop-blur-md p-8 sm:p-12 rounded-3xl max-w-5xl w-full relative mx-auto"
+          >
+            <button
+              id="closeModal"
+              class="absolute top-4 right-4 text-white text-3xl font-bold hover:text-cyan-400"
+            >
+              &times;
+            </button>
+
+            <img
+              src="./assets/portfolio-cv.png"
+              alt="Saviour Dogbey"
+              class="w-full max-h-[85vh] rounded-3xl border border-zinc-800 shadow-lg object-contain mx-auto"
+            />
+            <p
+              class="mt-6 text-zinc-300 text-center text-lg sm:text-xl leading-relaxed"
+            >
+              Saviour Dogbey — Multi-disciplinary Full-Stack Developer &
+              Designer. <br />
+              Experienced in building scalable web applications, UI/UX systems,
+              and visual brand identities.
+            </p>
+          </div>
+        </div>
+
+        <script>
+          const openModalBtn = document.getElementById("openModal");
+          const closeModalBtn = document.getElementById("closeModal");
+          const modal = document.getElementById("modal");
+
+          openModalBtn.addEventListener("click", () => {
+            modal.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden"); 
+          });
+
+          closeModalBtn.addEventListener("click", () => {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          });
+
+          modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+              modal.classList.add("hidden");
+              document.body.classList.remove("overflow-hidden");
+            }
+          });
+        </script>
       </section>
     </main>
     <footer class="py-12 text-center border-t border-zinc-900">
