@@ -213,8 +213,9 @@
             <span>linkedin.com/in/saviour-dogbey-31685a348</span>
           </a>
         </div>
+
         <div
-          class="relative inline-block pt-10 flex item-center justify-center"
+          class="relative inline-block pt-10 flex items-center justify-center"
         >
           <button id="openModal" class="relative group">
             <img
@@ -232,30 +233,74 @@
 
         <div
           id="modal"
-          class="fixed inset-0 hidden items-center justify-center z-50 bg-black/40 backdrop-blur-sm p-4 overflow-auto"
+          class="fixed inset-0 hidden items-center justify-center z-50 bg-black/60 backdrop-blur-sm p-4 overflow-auto"
         >
           <div
-            class="bg-white/10 backdrop-blur-md p-8 sm:p-12 rounded-3xl max-w-5xl w-full relative mx-auto"
+            class="bg-zinc-900/90 border border-zinc-800 p-6 sm:p-8 rounded-3xl max-w-5xl w-full relative mx-auto my-auto flex flex-col max-h-[90vh]"
           >
-            <button
-              id="closeModal"
-              class="absolute top-4 right-4 text-white text-3xl font-bold hover:text-cyan-400"
+            <!-- Header Bar with Download and Close -->
+            <div
+              class="flex items-center justify-between pb-4 mb-4 border-b border-zinc-800"
             >
-              &times;
-            </button>
+              <a
+                href="./assets/Saviour_Dogbey_CV.pdf"
+                download="Saviour_Dogbey_CV.pdf"
+                class="inline-flex items-center gap-2 px-5 py-2.5 bg-cyan-400 hover:bg-cyan-300 text-black font-semibold text-sm rounded-full transition shadow-lg"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-4 w-4"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"
+                  />
+                </svg>
+                Download PDF
+              </a>
 
-            <img
-              src="./assets/Saviour Resume.png"
-              alt="Saviour Dogbey"
-              class="w-full max-h-[85vh] rounded-3xl border border-zinc-800 shadow-lg object-contain mx-auto"
-            />
-            <p
-              class="mt-6 text-zinc-300 text-center text-lg sm:text-xl leading-relaxed"
+              <button
+                id="closeModal"
+                class="text-zinc-400 hover:text-white text-3xl font-bold transition px-2"
+              >
+                &times;
+              </button>
+            </div>
+
+            <!-- PDF Viewer with Embedded Frame -->
+            <div
+              class="w-full flex-1 min-h-[60vh] rounded-2xl overflow-hidden bg-black/50 border border-zinc-800"
             >
+              <object
+                data="./assets/Saviour_Dogbey_CV.pdf"
+                type="application/pdf"
+                class="w-full h-full min-h-[60vh]"
+              >
+                <div
+                  class="flex flex-col items-center justify-center h-full p-6 text-center"
+                >
+                  <p class="text-zinc-400 mb-4">
+                    Your browser doesn't support embedded PDF previewing.
+                  </p>
+                  <a
+                    href="./assets/Saviour_Dogbey_CV.pdf"
+                    target="_blank"
+                    class="px-4 py-2 bg-zinc-800 text-cyan-400 rounded-lg hover:bg-zinc-700 transition"
+                  >
+                    Open PDF in New Tab
+                  </a>
+                </div>
+              </object>
+            </div>
+
+            <p class="mt-4 text-zinc-400 text-center text-sm">
               Saviour Dogbey — Multi-disciplinary Full-Stack Developer &
-              Designer. <br />
-              Experienced in building scalable web applications, UI/UX systems,
-              and visual brand identities.
+              Designer.
             </p>
           </div>
         </div>
@@ -267,23 +312,27 @@
 
           openModalBtn.addEventListener("click", () => {
             modal.classList.remove("hidden");
+            modal.classList.add("flex");
             document.body.classList.add("overflow-hidden");
           });
 
           closeModalBtn.addEventListener("click", () => {
             modal.classList.add("hidden");
+            modal.classList.remove("flex");
             document.body.classList.remove("overflow-hidden");
           });
 
           modal.addEventListener("click", (e) => {
             if (e.target === modal) {
               modal.classList.add("hidden");
+              modal.classList.remove("flex");
               document.body.classList.remove("overflow-hidden");
             }
           });
         </script>
       </section>
     </main>
+
     <footer class="py-12 text-center border-t border-zinc-900">
       <p class="text-zinc-600 text-[10px] tracking-[0.5em] uppercase">
         &copy; 2026 NEBULA CREATIVE STUDIO — ALL RIGHTS RESERVED
